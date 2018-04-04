@@ -5,8 +5,15 @@ class Scale extends Component {
     super(props);
 
     this.USB_FILTERS = [
-      { vendorId: 0x0922, productId: 0x8003 }, // 10lb scale
-      { vendorId: 0x0922, productId: 0x8004 } // 25lb scale
+      { vendorId: 0x7b7c, productId: 0x0100 }, // 30kg scale Elane UParcel
+      { vendorId: 0x0922, productId: 0x8003 }, // 10lb scale Dymo M10
+      { vendorId: 0x0922, productId: 0x8004 }, // 25lb scale Dymo M25
+      { vendorId: 0x0922, productId: 0x8009 }, // 250lb scale Mettler S250
+      { vendorId: 0x1446, productId: 0x6A73 }, // 5lb scale Stamps.com 510
+      { vendorId: 0x1446, productId: 0x6A75 }, // 25lb scale Stamps.com 2510
+      { vendorId: 0x1446, productId: 0x6A78 }, // 75lb scale Dymo Endicia
+      { vendorId: 0x0B67, productId: 0x555E }, // Fairbanks SCB-R9000-14
+      { vendorId: 0x0EB8, productId: 0xF000 } // Mettler PS60
     ];
 
     this.UNIT_MODES = { 2: "g", 11: "oz" };
