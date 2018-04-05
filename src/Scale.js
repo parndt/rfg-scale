@@ -16,7 +16,7 @@ class Scale extends Component {
       { vendorId: 0x0EB8, productId: 0xF000 } // Mettler PS60
     ];
 
-    this.UNIT_MODES = { 2: "g", 11: "oz" };
+    this.UNIT_MODES = { 2: "g", 3: "kg", 11: "oz", 12: "lb" };
     this.SCALE_STATES = { 2: "±", 4: "+", 5: "-" };
 
     this.state = {
@@ -79,9 +79,11 @@ class Scale extends Component {
 
           const unit = this.UNIT_MODES[data[2]];
 
-          if (unit === "oz") {
+          if (unit === "oz" || unit === "lb") {
             // Use Math.pow to avoid floating point math.
             weight /= Math.pow(10, 1);
+          } else if (unit === "kg") {
+            weight /= 10
           }
 
           const scaleState = this.SCALE_STATES[data[1]];
@@ -181,7 +183,8 @@ class Scale extends Component {
             <small>{scaleState}</small>
             {weight}
             <small>{unit}</small>
-          </span>}
+          </span>
+        }
       </main>
     );
   }
