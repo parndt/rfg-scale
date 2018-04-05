@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Scale from './Scale';
+import ScaleView from './ScaleView';
 import './index.css';
 
 ReactDOM.render(
-  <Scale />,
+  <ScaleView />,
   document.getElementById('root')
 );
